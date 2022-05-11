@@ -1,0 +1,22 @@
+{
+    "name": "Vmess",
+    "description": "Vmess.",
+    "keywords": ["V2Ray"],
+    "env": {
+        "ID": {
+            "description": "UUID",
+            "value": "f0ebbcef-a021-4d93-87c8-d6ee5025d25c"
+        },
+        "AID": {
+            "description": "AlterID",
+            "value": "64"
+        },
+        "WSPATH": {
+            "description": "WebSocket Path",
+            "value": "/"
+        }
+    },
+    "website": "https://github.com/11AGHe/H-vm",
+    "repository": "https://github.com/11AGHe/H-vm",
+    "stack": "container"
+}
