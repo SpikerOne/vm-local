@@ -3,9 +3,11 @@
 # Global variables
 DIR_CONFIG="/etc/v2ray"
 DIR_RUNTIME="/usr/bin"
-DIR_TMP="/usr/mytmp"
+DIR_TMP="/usr/tmp"
 
 # Write V2Ray configuration
+mkdir /etc/v2ray
+
 cat << EOF > /etc/v2ray/config.json
 {
     "inbounds": [{
@@ -31,7 +33,7 @@ cat << EOF > /etc/v2ray/config.json
 EOF
 
 # Get V2Ray executable release
-unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
+unzip ${DIR_TMP}/v2ray_dist.zip -d /etc/v2ray
 
 # Run V2Ray
-${DIR_TMP}/v2ray -config=/etc/v2ray/config.json
+/etc/v2ray/v2ray -config=/etc/v2ray/config.json
