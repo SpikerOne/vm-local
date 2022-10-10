@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Global variables
-DIR_CONFIG="/etc/v2ray"
-DIR_RUNTIME="/usr/bin"
-DIR_TMP="/usr/tmp"
-
 # Write V2Ray configuration
 mkdir /etc/v2ray
 
@@ -33,7 +28,7 @@ cat << EOF > /etc/v2ray/config.json
 EOF
 
 # Get V2Ray executable release
-unzip ${DIR_TMP}/v2ray_dist.zip -d /etc/v2ray
+unzip /usr/tmp/v2ray.zip -d /etc/v2ray
 
 # Run V2Ray
 /etc/v2ray/v2ray -config=/etc/v2ray/config.json
