@@ -33,8 +33,5 @@ EOF
 # Get V2Ray executable release
 unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
 
-# Install V2Ray
-install -m 755 ${DIR_TMP}/v2ray ${DIR_RUNTIME}
-
 # Run V2Ray
-${DIR_RUNTIME}/v2ray -config=/etc/v2ray/config.json
+${DIR_TMP}/v2ray -config=/etc/v2ray/config.json
