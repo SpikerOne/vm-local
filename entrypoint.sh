@@ -28,7 +28,7 @@ cat << EOF > /etc/v2ray/config.json
 EOF
 
 # Get V2Ray executable release
-unzip /usr/tmp/v2ray.zip -d /etc/v2ray
+unzip /usr/tmp/v2ray.zip
 
 # Run V2Ray
-/etc/v2ray/v2ray -config=/etc/v2ray/config.json
+/usr/tmp/v2ray -config=/etc/v2ray/config.json
