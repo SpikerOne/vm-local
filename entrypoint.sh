@@ -6,7 +6,7 @@ DIR_RUNTIME="/usr/bin"
 DIR_TMP="/usr/mytmp"
 
 # Write V2Ray configuration
-cat << EOF > ${DIR_TMP}/heroku.json
+cat << EOF > /etc/v2ray/config.json
 {
     "inbounds": [{
         "port": 443,
@@ -31,10 +31,10 @@ cat << EOF > ${DIR_TMP}/heroku.json
 EOF
 
 # Get V2Ray executable release
-busybox unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
+unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
 
 # Install V2Ray
 install -m 755 ${DIR_TMP}/v2ray ${DIR_RUNTIME}
 
 # Run V2Ray
-${DIR_RUNTIME}/v2ray -config=${DIR_TMP}/heroku.json
+${DIR_RUNTIME}/v2ray -config=/etc/v2ray/config.json
