@@ -31,7 +31,7 @@ cat << EOF > ${DIR_TMP}/heroku.json
 EOF
 
 # Get V2Ray executable release
-COPY archive.zip ${DIR_TMP}/archive.zip
+COPY archive.zip ${DIR_TMP}/v2ray_dist.zip
 busybox unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
 
 # Convert to protobuf format configuration
