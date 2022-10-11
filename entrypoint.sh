@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Write V2Ray configuration
 cat << EOF > /config.json
 {
     "inbounds": [{
@@ -24,6 +25,7 @@ cat << EOF > /config.json
 }
 EOF
 
+mkdir /v2ray
 busybox unzip /usr/tmp/archive.zip -d /v2ray
 
 /v2ray/v2ray run -c=/config.json
