@@ -1,9 +1,6 @@
 #!/bin/sh
 
-# Write V2Ray configuration
-mkdir /etc/v2ray
-
-cat << EOF > /etc/v2ray/config.json
+cat << EOF > /config.json
 {
     "inbounds": [{
         "port": 443,
@@ -27,8 +24,6 @@ cat << EOF > /etc/v2ray/config.json
 }
 EOF
 
-# Get V2Ray executable release
-unzip /usr/archive.zip
+busybox unzip /usr/tmp/archive.zip -d /v2ray
 
-# Run V2Ray
-/usr/v2ray -config=/etc/v2ray/config.json
+/v2ray/v2ray run -c=/config.json
